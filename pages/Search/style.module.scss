@@ -1,0 +1,50 @@
+@import 'assets/variables';
+
+.categoriesWrapper {
+    padding: 0 15px;
+}
+
+.categoriesWrapperItem {
+    width: 100%;
+    margin-top: 30px;
+    height: 200px;
+    position: relative;
+}
+
+.categoriesWrapperItemImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.collectionWrapperItemGradiant {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.categoriesWrapperItemTextWrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+}
+
+.categoriesWrapperItemTextWrapperRight {
+    display: flex;
+    align-items: flex-end;
+}
+
+.categoriesWrapperItemAddText {
+    color: #fff;
+    font-size: 14px;
+    font-family: $font_default;
+    margin-top: 5px;
+}
+
+.categoriesWrapperItemText {
+    font-family: $font_main;
+    color: #fff;
+    font-size: 25px;
+}

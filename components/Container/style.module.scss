@@ -1,0 +1,25 @@
+@import 'assets/variables';
+
+.container {
+    flex: 1;
+    position: relative;
+    background-color: $mode_color;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 0;
+    background-color: $add_mode_color;
+    border-top-width: 0;
+    elevation: 0;
+}
+
+.active {
+    fill: $active_color;
+}
+
+.inactive {
+    fill: $inactive_color;
+}

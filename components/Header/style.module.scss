@@ -1,0 +1,15 @@
+@import 'assets/variables';
+
+.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 15px;
+}
+
+.topText {
+    color: #fff;
+    font-size: 25px;
+    font-family: $font_main;
+}

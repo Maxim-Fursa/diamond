@@ -1,0 +1,66 @@
+$font_main: 'Playfair';
+$font_default: 'Poppins';
+
+.container {
+    flex: 1;
+    position: relative;
+}
+
+.gradient {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.content {
+    flex: 1;
+    padding-bottom: 15px;
+}
+
+.bottom {
+    margin-top: auto;
+}
+
+.mainText {
+    font-size: 80px;
+    color: #fff;
+    padding: 0 15px;
+    font-family: $font_main;
+}
+
+.addText {
+    color: #C7C7C7;
+    font-size: 16px;
+    padding: 0 15px;
+    line-height: 30px;
+    font-family: $font_default;
+}
+
+.button {
+    margin: 45px 15px 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    border-radius: 100px;
+    padding: 15px 30px;
+}
+
+.buttonText {
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 4px;
+    font-family: $font_main;
+    text-transform: uppercase;
+}
