@@ -1,15 +1,12 @@
 @import 'assets/variables';
 
-.collectionWrapper {
-    margin-top: 30px;
-    height: 250px;
-}
 
-.collectionWrapperScroll {
+.collectionWrapper {
     display: flex;
     flex-direction: row;
     width: 100%;
     padding: 0 15px;
+    height: 250px;
 }
 
 .collectionWrapperItem {
@@ -34,10 +31,17 @@
     width: 100%;
 }
 
+.collectionWrapperItemGradientBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
 .collectionWrapperItemGradiant {
     width: 100%;
     height: 100%;
-    position: absolute;
 }
 
 .collectionWrapperItemText {
@@ -48,15 +52,12 @@
 }
 
 .categoriesWrapper {
-    margin-top: 30px;
-    height: 30px;
-}
-
-.categoriesWrapperScroll {
     display: flex;
     flex-direction: row;
     width: 100%;
     padding: 0 15px;
+    margin-top: 30px;
+    height: 30px;
 }
 
 .categoriesItem {
@@ -76,12 +77,12 @@
 .productsWrapper {
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
-    padding: 0 15px;
+    flex-wrap: wrap;
 }
 
 .productsWrapperItem {
     border-radius: 15px;
+    margin: 30px 15px 0;
     height: 250px;
     position: relative;
 }

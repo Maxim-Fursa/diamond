@@ -1,0 +1,23 @@
+@import 'assets/variables';
+
+.favoritesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.empty {
+    flex: 1;
+    align-self: stretch;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyText {
+    color: #fff;
+    font-family: $font_main;
+    font-size: 20px;
+    margin-top: 80%;
+}

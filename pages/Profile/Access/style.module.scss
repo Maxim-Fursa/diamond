@@ -1,0 +1,33 @@
+@import 'assets/variables';
+
+.loginWrapper {
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    color: #fff;
+    font-family: $font_main;
+    font-size: 20px;
+    margin-top: 80%;
+}
+
+.button {
+    margin-top: 30px;
+    padding: 0 30px;
+    border-radius: 15px;
+    height: 50px;
+    background-color: $color_1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonText {
+    color: #fff;
+    font-family: $font_default;
+    line-height: 20px;
+}

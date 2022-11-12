@@ -1,0 +1,48 @@
+@import 'assets/variables';
+
+.loginWrapper {
+    padding: 0 15px;
+}
+
+.input {
+    flex: 1;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid $inactive_color;
+    color: $inactive_color;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.button {
+    flex: 1;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.buttonText {
+    font-family: $font_default;
+    line-height: 20px;
+}
+
+.buttonFull {
+    background-color: $color_1;
+}
+
+.buttonFullText {
+    color: #fff;
+}
+
+.buttonOutline {
+    border: 1px solid $color_1;
+}
+
+.buttonOutlineText {
+    color: $color_1;
+    font-family: $font_default;
+    line-height: 20px;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, ScrollView, Image, FlatList } from 'react-native';
+import { Text, View, TouchableHighlight, ScrollView, Image, FlatList } from 'react-native';
 import Svg, { Path, Defs, LinearGradient, Stop, Rect } from 'react-native-svg'
 import { Dimensions } from 'react-native';
 import { Container, Search, Header } from 'diamond/components'
@@ -31,15 +31,15 @@ export default function Home({ }) {
 	]
 
     return (
-        <Container navbar={{visible: true, active: "Home"}}>
+        <Container>
 			<Header text={"QUENNA"} />
 			<Search/>
-			<View style={styles.collectionWrapper}>
-				<ScrollView style={styles.collectionWrapperScroll} horizontal={true} contentContainerStyle={{paddingRight: 0}}>
-					{
-						collections.map(el => 
-							<View style={styles.collectionWrapperItem} key={el.id}>
-								<Image source={{uri: el.photo}} style={styles.collectionWrapperItemImage}/>
+			<ScrollView style={styles.collectionWrapper} horizontal={true} contentContainerStyle={{paddingRight: 0}} showsHorizontalScrollIndicator={false}>
+				{
+					collections.map(el => 
+						<View style={styles.collectionWrapperItem} key={el.id}>
+							<Image source={{uri: el.photo}} style={styles.collectionWrapperItemImage}/>
+							<View style={styles.collectionWrapperItemGradientBox}>
 								<Svg height="100%" width="100%" style={styles.collectionWrapperItemGradiant}>
 									<Defs>
 										<LinearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -49,41 +49,36 @@ export default function Home({ }) {
 									</Defs>
 									<Rect width="100%" height="100%" fill="url(#grad)"/>
 								</Svg>
-								<View style={styles.collectionWrapperItemTextWrapper}>
-									<Text style={styles.collectionWrapperItemText}>{el.name}</Text>
-								</View>
-							</View>	
-						)
-					}
-				</ScrollView>
+							</View>
+							<View style={styles.collectionWrapperItemTextWrapper}>
+								<Text style={styles.collectionWrapperItemText}>{el.name}</Text>
+							</View>
+						</View>	
+					)
+				}
+			</ScrollView>
+			<ScrollView style={styles.categoriesWrapper} horizontal={true} contentContainerStyle={{paddingRight: 0}} showsHorizontalScrollIndicator={false}>
+				{
+					categories.map(el => 
+						<Text style={[styles.categoriesItem, choose === el.id ? styles.categoriesItemActive : styles.categoriesItemInactive]} key={el.id}>{el.name}</Text>
+					)
+				}
+			</ScrollView>
+			<View style={styles.productsWrapper}>
+				{
+					products.map(el => 
+						<View style={[styles.productsWrapperItem, {width: itemWidth}]} key={el.id}>
+							<Image source={{uri: el.photo}} style={styles.productsWrapperItemImage}/>
+							<TouchableHighlight style={styles.productsWrapperItemButton}>
+								<Svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<Path fill-rule="evenodd" clip-rule="evenodd" d="M4 16C4 15.4477 4.44772 15 5 15H27C27.5523 15 28 15.4477 28 16C28 16.5523 27.5523 17 27 17H5C4.44772 17 4 16.5523 4 16Z" fill="white"/>
+									<Path fill-rule="evenodd" clip-rule="evenodd" d="M16 4C16.5523 4 17 4.44772 17 5V27C17 27.5523 16.5523 28 16 28C15.4477 28 15 27.5523 15 27V5C15 4.44772 15.4477 4 16 4Z" fill="white"/>
+								</Svg>
+							</TouchableHighlight>
+						</View>	
+					)
+				}
 			</View>
-			<View style={styles.categoriesWrapper}>
-				<ScrollView style={styles.categoriesWrapperScroll} horizontal={true} contentContainerStyle={{paddingRight: 0}}>
-					{
-						categories.map(el => 
-							<Text style={[styles.categoriesItem, choose === el.id ? styles.categoriesItemActive : styles.categoriesItemInactive]} key={el.id}>{el.name}</Text>
-						)
-					}
-				</ScrollView>
-			</View>
-			<FlatList 
-				numColumns={2}
-				style={styles.productsWrapper}
-				data={products}
-				renderItem={({index, item}) => (
-					<View style={[styles.productsWrapperItem, {width: itemWidth, marginRight: index % 2 == 0 ? 30 : 0}]}>
-						<Image source={{uri: item.photo}} style={styles.productsWrapperItemImage}/>
-						<TouchableOpacity style={styles.productsWrapperItemButton}>
-							<Svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<Path fill-rule="evenodd" clip-rule="evenodd" d="M4 16C4 15.4477 4.44772 15 5 15H27C27.5523 15 28 15.4477 28 16C28 16.5523 27.5523 17 27 17H5C4.44772 17 4 16.5523 4 16Z" fill="white"/>
-								<Path fill-rule="evenodd" clip-rule="evenodd" d="M16 4C16.5523 4 17 4.44772 17 5V27C17 27.5523 16.5523 28 16 28C15.4477 28 15 27.5523 15 27V5C15 4.44772 15.4477 4 16 4Z" fill="white"/>
-							</Svg>
-						</TouchableOpacity>
-					</View>
-				)}
-				ItemSeparatorComponent={() => <View style={{height: 30}} />}
-				keyExtractor={item => item.id}
-			/>
 		</Container>
     )
 }

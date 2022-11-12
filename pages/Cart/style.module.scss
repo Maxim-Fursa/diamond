@@ -1,0 +1,109 @@
+@import 'assets/variables';
+
+.empty {
+    flex: 1;
+    align-self: stretch;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyText {
+    color: #fff;
+    font-family: $font_main;
+    font-size: 20px;
+    margin-top: 80%;
+}
+
+.item {
+    flex: 1;
+    margin: 0 15px 30px;
+    background-color: #1E1E1E;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.itemImage {
+    height: 80px;
+    width: 100px;
+    border-radius: 15px;
+}
+
+.itemInfo {
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.itemInfoText {
+    color: #fff;
+    font-family: $font_main;
+    font-size: 20px;
+}
+
+.itemInfoBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.itemInfoSize {
+    color: $color_1;
+}
+
+.checkOutWrapper {
+    background-color: $add_mode_color;
+    border-radius: 15px 15px 0 0;
+    padding: 15px;
+}
+
+.checkOutWrapperText {
+    color: #fff;
+    font-family: $font_main;
+    font-size: 16px;
+}
+
+.checkOutWrapperPromocode {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #1E1E1E;
+    margin: 15px 0;
+    border-radius: 15px;
+}
+
+.checkOutWrapperPText {
+    color: #fff;
+    font-family: $font_default;
+    line-height: 28px;
+}
+
+.checkOutWrapperGroup {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.checkOutWrapperButton {
+    height: 50px;
+    background-color: $color_1;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.checkOutWrapperButtonText {
+    color: #fff;
+    font-family: $font_default;
+    line-height: 20px;
+}

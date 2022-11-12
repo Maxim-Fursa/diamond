@@ -1,19 +1,23 @@
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import styles from './style.module.scss'
 
-export default function Header({ text, leftSvg, rightSvg }) {
+export default function Header({ text, leftFunc, leftSvg, rightFunc, rightSvg }) {
 
     return (
         <View style={styles.top}>
             {
                 leftSvg && (
-                    <TouchableOpacity>{leftSvg}</TouchableOpacity>
+                    <Pressable onPress={leftFunc}>{leftSvg}</Pressable>
                 )
             }
-            <Text style={styles.topText}>{text}</Text>
+            {
+                text && (
+                    <Text style={styles.topText}>{text}</Text>
+                )
+            }
             {
                 rightSvg && (
-                    <TouchableOpacity>{rightSvg}</TouchableOpacity>
+                    <Pressable onPress={rightFunc}>{rightSvg}</Pressable>
                 )
             }
         </View>
