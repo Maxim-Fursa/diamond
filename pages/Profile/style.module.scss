@@ -1,0 +1,15 @@
+@import 'assets/variables';
+
+.loaderWrapper {
+    flex: 1;
+    background: $mode_color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loaderWrapperText {
+    color: #fff;
+    font-size: 20px;
+    font-family: $font_main;
+}

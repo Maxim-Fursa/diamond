@@ -1,8 +1,10 @@
 import React from 'react'
 import Login from './Login/Login'
 import Access from './Access/Access'
+import { View, Text } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from './style.module.scss'
 
 export const AuthContext = React.createContext();
 
@@ -38,6 +40,14 @@ export default function Profile() {
         }
     );
 
+    const Loader = () => {
+        return (
+            <View style={styles.loaderWrapper}>
+                <Text style={styles.loaderWrapperText}>Loading...</Text>
+            </View>
+        );
+    }
+
     React.useEffect(() => {
         const bootstrapAsync = async () => {
             let userToken;
@@ -65,7 +75,9 @@ export default function Profile() {
     return (
         <AuthContext.Provider value={authContext}>
             <Stack.Navigator screenOptions={{ headerShown: false, animation: 'none' }}>
-                {state.userToken === null ? (
+                {state.isLoading ? (
+                    <Stack.Screen name="Loader" component={Loader} />
+                ) : state.userToken === null ? (
                     <Stack.Screen name="Profile_Login">
                         {props => <Login {...props} context={AuthContext}/>}
                     </Stack.Screen>  
